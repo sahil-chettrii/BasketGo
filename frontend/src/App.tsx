@@ -6,6 +6,12 @@ import Home from './pages/Home'
 import Prouducts from './pages/Prouducts'
 import ProductsPage from './pages/ProductsPage'
 import SearchResult from './pages/SearchResult'
+import FlashDeals from './pages/FlashDeals'
+import CheckOut from './pages/CheckOut'
+import MyOders from './pages/MyOders'
+import OderTracking from './pages/OderTracking'
+import Addresses from './pages/Addresses'
+import ProtectedRoute from './components/ProtectedRoute'
 function App() {
 
   return (
@@ -24,6 +30,15 @@ function App() {
                   <Route  path='/Prouducts'element={<Prouducts/>}/>
                   <Route  path='/Prouducts/:id'element={<ProductsPage/>}/>
                  <Route  path='/Search'element={<SearchResult/>}/>
+                 <Route  path='/Deals'element={<FlashDeals/>}/>
+
+               <Route element={<ProtectedRoute/>}>
+                <Route path='CheckOut' element={<CheckOut/>}/>
+                 <Route path='Oders' element={<MyOders/>}/>
+                 <Route path='Oders/:id' element={<OderTracking/>}/>
+                 <Route path='Addresses' element={<Addresses/>}/>
+
+               </Route>
 
 
 
